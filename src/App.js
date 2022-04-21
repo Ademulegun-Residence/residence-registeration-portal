@@ -1,9 +1,11 @@
+import Home from './Pages/Home'
+
 function App() {
   return (
-    <div>
-      <h1>ASRA Registeration Portal</h1>
-    </div>
-  );
+    <>
+      <Home />
+    </>
+  )
 }
 
-export default App;
+export default App
