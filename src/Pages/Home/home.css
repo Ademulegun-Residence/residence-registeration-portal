@@ -1,0 +1,131 @@
+.container-style {
+  padding: 30px;
+}
+
+.home-logo {
+  font-size: 17px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-top: 100px;
+}
+
+.input-style {
+  border: 1px solid #000000;
+  border-radius: 4px;
+  width: 93%;
+  height: 53px;
+  margin-top: 40px;
+  padding: 0px 10px;
+}
+
+.button-style {
+  width: 218px;
+  height: 47px;
+  background: #000000;
+  border: none;
+  border-radius: 4px;
+  line-height: 18px;
+  color: #FFFFFF;
+  margin: 50px auto;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 13px;
+}
+
+.floating-label {
+  position: absolute;
+  left: 40px;
+  top: 268px;
+  color: #6c6c7f;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.transparent-btn-style {
+  width: 154px;
+  height: 47px;
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.errorStyle {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.LoadingWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px 0;
+  margin: 0 -5%;
+  overflow: hidden;
+}
+
+.BtnLoading {
+  position: relative;
+  left: -9999px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #ffffff;
+  box-shadow: 9984px 0 0 0 #fff, 9999px 0 0 0 #ffffff,
+    10014px 0 0 0 #ffffff;
+  animation: dotTyping 1s infinite linear;
+}
+
+@keyframes dotTyping {
+  0% {
+    box-shadow: 9984px 0 0 0 #ffffff, 9999px 0 0 0 #ffffff,
+      10014px 0 0 0 #ffffff;
+  }
+
+  16.667% {
+    box-shadow: 9984px -10px 0 0 #ffffff, 9999px 0 0 0 #ffffff,
+      10014px 0 0 0 #ffffff;
+  }
+
+  33.333% {
+    box-shadow: 9984px 0 0 0 #ffffff, 9999px 0 0 0 #ffffff,
+      10014px 0 0 0 #ffffff;
+  }
+
+  50% {
+    box-shadow: 9984px 0 0 0 #ffffff, 9999px -10px 0 0 #ffffff,
+      10014px 0 0 0 #ffffff;
+  }
+
+  66.667% {
+    box-shadow: 9984px 0 0 0 #ffffff, 9999px 0 0 0 #ffffff,
+      10014px 0 0 0 #ffffff;
+  }
+
+  83.333% {
+    box-shadow: 9984px 0 0 0 #ffffff, 9999px 0 0 0 #ffffff,
+      10014px -10px 0 0 #ffffff;
+  }
+
+  100% {
+    box-shadow: 9984px 0 0 0 #ffffff, 9999px 0 0 0 #ffffff,
+      10014px 0 0 0 #ffffff;
+  }
+}
