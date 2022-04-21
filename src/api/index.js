@@ -4,43 +4,43 @@ export const getStreets = async () => {
   )
     .then((res) => res.json())
     .then((data) => {
-      const response = data.data
-      return response
-    })
-  return response
-}
+      const response = data.data;
+      return response;
+    });
+  return response;
+};
 
 export const getHouses = async () => {
   const response = await fetch(`${process.env.REACT_APP_BASE_URL}/houses`)
     .then((res) => res.json())
     .then((data) => {
-      const response = data.data
-      return response
-    })
-  return response
-}
+      const response = data.data;
+      return response;
+    });
+  return response;
+};
 
 export const createResident = async (data) => {
   const response = await fetch(`${process.env.REACT_APP_BASE_URL}/residents`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   })
     .then((res) => res.json())
     .then((data) => {
-      const response = data.data
-      return response
-    })
+      const response = data.data;
+      return response;
+    });
 
-  return response
-}
+  return response;
+};
 
 export const updateResident = async (id, data) => {
   const response = await fetch(
-    `${process.env.REACT_APP_BASE_URL}/residents/:${id}`,
+    `${process.env.REACT_APP_BASE_URL}/residents/${id}`,
     {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name: data.residentName,
         houseId: data.houseNumber,
@@ -53,22 +53,22 @@ export const updateResident = async (id, data) => {
   )
     .then((res) => res.json())
     .then((data) => {
-      const response = data.data
-      return response
+      const response = data.data;
+      return response;
     })
     .catch((err) => {
-      return err
-    })
+      return err;
+    });
 
-  return response
-}
+  return response;
+};
 
 export const addDependant = async (id, data) => {
   const response = await fetch(
-    `${process.env.REACT_APP_BASE_URL}/residents/:${id}/dependants`,
+    `${process.env.REACT_APP_BASE_URL}/residents/${id}/dependants`,
     {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name: data.dependantName,
         gender: data.gender,
@@ -80,12 +80,12 @@ export const addDependant = async (id, data) => {
   )
     .then((res) => res.json())
     .then((data) => {
-      const response = data.data
-      return response
+      const response = data.data;
+      return response;
     })
     .catch((err) => {
-      return err
-    })
+      return err;
+    });
 
-  return response
-}
+  return response;
+};
