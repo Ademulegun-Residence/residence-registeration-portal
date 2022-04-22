@@ -31,8 +31,13 @@
   border: none;
   border-radius: 4px;
   line-height: 18px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 50px auto;
+}
+
+.button-style:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 select {
@@ -57,7 +62,7 @@ select {
 .transparent-btn-style {
   width: 154px;
   height: 47px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 2px solid #000000;
   border-radius: 4px;
   line-height: 18px;
@@ -88,8 +93,7 @@ select {
   border-radius: 5px;
   background-color: #ffffff;
   color: #ffffff;
-  box-shadow: 9984px 0 0 0 #fff, 9999px 0 0 0 #ffffff,
-    10014px 0 0 0 #ffffff;
+  box-shadow: 9984px 0 0 0 #fff, 9999px 0 0 0 #ffffff, 10014px 0 0 0 #ffffff;
   animation: dotTyping 1s infinite linear;
 }
 

@@ -73,8 +73,10 @@ export const addDependant = async (id, data) => {
         name: data.dependantName,
         gender: data.gender,
         dateOfBirth: data.dependantDateOfBirth,
-        email: data.dependantEmail,
-        phoneNumber: data.dependantPhoneNumber,
+        email: Boolean(data.dependantEmail) ? data.dependantEmail : undefined,
+        phoneNumber: Boolean(data.dependantPhoneNumber)
+          ? data.dependantPhoneNumber
+          : undefined,
       }),
     }
   )

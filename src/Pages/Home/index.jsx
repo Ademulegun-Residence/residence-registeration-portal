@@ -1,47 +1,53 @@
-import { useState } from 'react'
-import { createResident } from '../../api'
-import { createResidentValidation } from '../../utils/validation'
-import UpdateResident from '../UpdateResident'
-import './home.css'
+import { useState } from "react";
+import { createResident } from "../../api";
+import { createResidentValidation } from "../../utils/validation";
+import UpdateResident from "../UpdateResident";
+import { useNotificationCtx } from "context/notification";
+import "./home.css";
 
 const Home = () => {
-  const [errors, setErrors] = useState({})
-  const [loading, setLoading] = useState(false)
-  const [residentInfo, setResidentInfo] = useState({})
-  const [updateResidentInfo, setUpdateResidentInfo] = useState(false)
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [residentInfo, setResidentInfo] = useState({});
+  const [updateResidentInfo, setUpdateResidentInfo] = useState(false);
+  const { setNotification } = useNotificationCtx();
 
   const [inputs, setInputs] = useState({
-    email: '',
-    phoneNumber: '',
-  })
+    email: "",
+    phoneNumber: "",
+  });
 
   const handleInputChange = (event) => {
-    const { name, value } = event.target
-    setInputs((prevInput) => ({ ...prevInput, [name]: value }))
-  }
+    const { name, value } = event.target;
+    setInputs((prevInput) => ({ ...prevInput, [name]: value }));
+  };
 
   const handleSubmit = (event) => {
-    setErrors({})
-    event.preventDefault()
+    setErrors({});
+    event.preventDefault();
     createResidentValidation
       .validate(inputs, { abortEarly: false })
       .then(async () => {
-        setLoading(true)
-        const response = await createResident(inputs)
+        setLoading(true);
+        const response = await createResident(inputs);
         if (response !== undefined) {
-          setLoading(false)
+          setNotification({
+            type: "success",
+            message: "Resident created successfully",
+          });
+          setLoading(false);
         }
-        setResidentInfo(response)
-        setUpdateResidentInfo(true)
+        setResidentInfo(response);
+        setUpdateResidentInfo(true);
       })
       .catch((err) => {
-        let errList = {}
+        let errList = {};
         err.inner.forEach((e) => {
-          errList = { ...errList, [e.path]: e.message }
-        })
-        setErrors(errList)
-      })
-  }
+          errList = { ...errList, [e.path]: e.message };
+        });
+        setErrors(errList);
+      });
+  };
 
   return (
     <div className='container-style'>
@@ -49,6 +55,7 @@ const Home = () => {
         <UpdateResident
           residentId={residentInfo?.id}
           goBack={() => setUpdateResidentInfo(false)}
+          residentInfo={residentInfo}
         />
       ) : (
         <>
@@ -77,14 +84,14 @@ const Home = () => {
                   <div className='BtnLoading'></div>
                 </div>
               ) : (
-                'Update Residents Info'
+                "Update Residents Info"
               )}
             </button>
           </form>
         </>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
