@@ -14,7 +14,6 @@ const UpdateResident = ({ residentId, goBack, residentInfo }) => {
   const [filteredHouses, setFilteredHouses] = useState([]);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
-  const [addDependant, setAddDependant] = useState(false);
   const { setNotification } = useNotificationCtx();
 
   console.log({ residentInfo });
@@ -81,7 +80,7 @@ const UpdateResident = ({ residentId, goBack, residentInfo }) => {
   console.log(inputs);
   return (
     <div>
-      {addDependant ? (
+      {residentInfo?.name ? (
         <Dependant residentId={residentId} goBack={goBack} />
       ) : (
         <>
@@ -89,12 +88,6 @@ const UpdateResident = ({ residentId, goBack, residentInfo }) => {
             <h1 className='home-logo' onClick={() => goBack()}>
               ASRA
             </h1>
-            <button
-              className='transparent-btn-style'
-              onClick={() => setAddDependant(true)}
-            >
-              Add Dependant
-            </button>
           </div>
           <form
             className='inputs-container'
@@ -204,7 +197,7 @@ const UpdateResident = ({ residentId, goBack, residentInfo }) => {
             <span className='errorStyle'>{errors?.unitType}</span>
             <button
               className='button-style'
-              disabled={Boolean(residentInfo.name)}
+              disabled={Boolean(residentInfo?.name)}
             >
               {loading ? (
                 <div className='LoadingWrapper'>
