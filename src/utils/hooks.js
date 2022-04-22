@@ -6,7 +6,7 @@ import {
   useCallback,
   useReducer,
 } from "react";
-import { useNotificationCtx } from "context/notification-context";
+import { useNotificationCtx } from "../context/notification";
 
 export const useLocalStorage = (
   key,

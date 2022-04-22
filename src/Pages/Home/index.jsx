@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createResident } from "../../api";
 import { createResidentValidation } from "../../utils/validation";
 import UpdateResident from "../UpdateResident";
-import { useNotificationCtx } from "context/notification";
+import { useNotificationCtx } from "../../context/notification";
 import "./home.css";
 
 const Home = () => {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { addDependant } from "../../api";
 import { addDependantValidation } from "../../utils/validation";
-import { useNotificationCtx } from "context/notification";
+import { useNotificationCtx } from "../../context/notification";
 
 import "../Home/home.css";
 

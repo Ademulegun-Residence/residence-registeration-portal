@@ -1,5 +1,5 @@
 import Home from "./Pages/Home";
-import { useNotificationCtx } from "context/notification";
+import { useNotificationCtx } from "./context/notification";
 
 function App() {
   const { notification } = useNotificationCtx();

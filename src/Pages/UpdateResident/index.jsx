@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getStreets, getHouses, updateResident } from "../../api";
 import { updateResidentValidation } from "../../utils/validation";
-import { useNotificationCtx } from "context/notification";
+import { useNotificationCtx } from "../../context/notification";
 import Dependant from "../Dependant";
 
 import { unitType } from "./data";
